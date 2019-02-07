@@ -7,7 +7,6 @@ var myGameArea = {
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.frameNo = 0;
         this.interval = setInterval(updateGameArea, 20);
-        /*
         window.addEventListener('keydown', function (e) {
           myGameArea.keys = (myGameArea.keys || []);
           myGameArea.keys[e.keyCode] = true;
@@ -15,13 +14,12 @@ var myGameArea = {
         window.addEventListener('keyup', function (e) {
           myGameArea.keys[e.keyCode] = false; 
         })
-        */
         },
     clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
 }
-/*
+
 var player = {
   acceleration : 2,
   maxSpeed : 10,
@@ -32,7 +30,7 @@ var player = {
   yVel : 0,
   zVel : 0,
   gravityAcceleration : 0,
-  playerSprite : sprite(30, 30, "red", 0, 0),
+  playerSprite : new sprite(30, 30, "red", 0, 0),
   update : function() {
   
     if (myGameArea.keys && myGameArea.keys[87]) {this.xVel += 2 * acceleration};
@@ -54,7 +52,7 @@ var player = {
     this.playerSprite.update()
   }
 }
-*/
+
 function sprite(width, height, color, x, y) {
   this.width = width;
   this.height = height;
@@ -70,14 +68,9 @@ function sprite(width, height, color, x, y) {
 function updateGameArea() {
     myGameArea.clear();
     myGameArea.frameNo += 1;
-    // player.update();
-    yeet.update();
+    player.update();
 }
 
 function startGame() {
-    yeet = new sprite(30, 30, "red", 30, 30);
     myGameArea.start();
-    updateGameArea();
 }
-
-var yeet;
