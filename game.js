@@ -69,12 +69,13 @@ function sprite(width, height, color, x, y) {
 
 function updateGameArea() {
     myGameArea.clear();
-    myGameArea.frameNo += 1
+    myGameArea.frameNo += 1;
     // player.update();
     yeet.update();
 }
 
 function startGame() {
-    var yeet = sprite(30, 30, "red", 30, 30)
+    var yeet = sprite(30, 30, "red", 30, 30);
     myGameArea.start();
+    updateGameArea();
 }
