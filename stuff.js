@@ -29,7 +29,7 @@ var player = {
   yVel : 0
   zVel : 0
   gravityAcceleration : 0
-  playerSprite : sprite(10, 10, "BLUE", 0, 0)
+  playerSprite : sprite(30, 30, "red", 0, 0)
   update : function() {
     
     // WASD
