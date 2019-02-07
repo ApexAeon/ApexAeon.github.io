@@ -75,7 +75,9 @@ function updateGameArea() {
 }
 
 function startGame() {
-    var yeet = sprite(30, 30, "red", 30, 30);
+    yeet = new sprite(30, 30, "red", 30, 30);
     myGameArea.start();
     updateGameArea();
 }
+
+var yeet;
