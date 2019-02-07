@@ -21,7 +21,7 @@ var myGameArea = {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
 }
-
+/*
 var player = {
   acceleration : 2,
   maxSpeed : 10,
@@ -34,8 +34,7 @@ var player = {
   gravityAcceleration : 0,
   playerSprite : sprite(30, 30, "red", 0, 0),
   update : function() {
-    /*
-    // WASD
+  
     if (myGameArea.keys && myGameArea.keys[87]) {this.xVel += 2 * acceleration};
     if (myGameArea.keys && myGameArea.keys[65]) {this.zVel += 2 * acceleration};
     if (myGameArea.keys && myGameArea.keys[83]) {this.xVel -= 2 * acceleration};
@@ -49,13 +48,13 @@ var player = {
     this.x += this.xVel;
     this.y += this.yVel;
     this.z += this.zVel;
-    */
-    this.playerSprite.x = this.x; //TODO create a sprite function for this, allow it to render in different modes
+  
+    this.playerSprite.x = this.x; 
     this.playerSprite.y = this.z;
     this.playerSprite.update()
   }
 }
-
+*/
 function sprite(width, height, color, x, y) {
   this.width = width;
   this.height = height;
@@ -71,9 +70,11 @@ function sprite(width, height, color, x, y) {
 function updateGameArea() {
     myGameArea.clear();
     myGameArea.frameNo += 1
-    player.update();
+    // player.update();
+    yeet.update();
 }
 
 function startGame() {
+    var yeet = sprite(30, 30, "red", 30, 30)
     myGameArea.start();
 }
