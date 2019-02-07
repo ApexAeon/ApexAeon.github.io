@@ -11,6 +11,13 @@ var myGameArea = {
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.frameNo = 0;
         this.interval = setInterval(updateGameArea, 20);
+        window.addEventListener('keydown', function (e) {
+          myGameArea.keys = (myGameArea.keys || []);
+          myGameArea.keys[e.keyCode] = true;
+        })
+        window.addEventListener('keyup', function (e) {
+          myGameArea.keys[e.keyCode] = false; 
+        })
         },
     clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -31,10 +38,10 @@ var player = {
   update : function() {
     
     // WASD
-    if (gameArea.keys && gameArea.keys[87]) {this.xVel += 2 * acceleration}
-    if (gameArea.keys && gameArea.keys[65]) {this.zVel += 2 * acceleration}
-    if (gameArea.keys && gameArea.keys[83]) {this.xVel -= 2 * acceleration}
-    if (gameArea.keys && gameArea.keys[68]) {this.zVel -= 2 * acceleration}
+    if (myGameArea.keys && myGameArea.keys[87]) {this.xVel += 2 * acceleration}
+    if (myGameArea.keys && myGameArea.keys[65]) {this.zVel += 2 * acceleration}
+    if (myGameArea.keys && myGameArea.keys[83]) {this.xVel -= 2 * acceleration}
+    if (myGameArea.keys && myGameArea.keys[68]) {this.zVel -= 2 * acceleration}
     
     if (this.xVel < 0) {this.xVel += acceleration}
     if (this.zVel < 0) {this.zVel += acceleration}
@@ -56,12 +63,13 @@ function sprite(width, height, color, x, y) {
   this.x = x;
   this.y = y; 
   this.update = function(){
-    ctx = gameArea.context;
+    ctx = myGameArea.context;
     ctx.fillStyle = color;
     ctx.fillRect(this.x, this.y, this.width, this.height);
   }
 }
 function updateGameArea() {
     myGameArea.clear();
+    myGameArea.frameNo += 1
     player.update();
 }
