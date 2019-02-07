@@ -23,16 +23,16 @@ var myGameArea = {
 var player = {
   acceleration : 2,
   maxSpeed : 10,
-  x : 0,
+  x : 60,
   y : 0,
-  z : 0,
+  z : 60,
   xVel : 0,
   yVel : 0,
   zVel : 0,
   gravityAcceleration : 0,
   playerSprite : sprite(30, 30, "red", 0, 0),
   update : function() {
-    
+    /*
     // WASD
     if (myGameArea.keys && myGameArea.keys[87]) {this.xVel += 2 * acceleration};
     if (myGameArea.keys && myGameArea.keys[65]) {this.zVel += 2 * acceleration};
@@ -47,9 +47,9 @@ var player = {
     this.x += this.xVel;
     this.y += this.yVel;
     this.z += this.zVel;
-    
+    */
     this.playerSprite.x = this.x; //TODO create a sprite function for this, allow it to render in different modes
-    this.playerSprite.y = this.y;
+    this.playerSprite.y = this.z;
     this.playerSprite.update()
   }
 }
