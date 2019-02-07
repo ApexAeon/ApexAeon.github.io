@@ -1,7 +1,3 @@
-
-function startGame() {
-    myGameArea.start();
-}
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
@@ -25,16 +21,16 @@ var myGameArea = {
 }
 
 var player = {
-  acceleration : 2
-  maxSpeed : 10
-  x : 0
-  y : 0
-  z : 0
-  xVel : 0
-  yVel : 0
-  zVel : 0
-  gravityAcceleration : 0
-  playerSprite : sprite(30, 30, "red", 0, 0)
+  acceleration : 2,
+  maxSpeed : 10,
+  x : 0,
+  y : 0,
+  z : 0,
+  xVel : 0,
+  yVel : 0,
+  zVel : 0,
+  gravityAcceleration : 0,
+  playerSprite : sprite(30, 30, "red", 0, 0),
   update : function() {
     
     // WASD
@@ -68,8 +64,13 @@ function sprite(width, height, color, x, y) {
     ctx.fillRect(this.x, this.y, this.width, this.height);
   }
 }
+
 function updateGameArea() {
     myGameArea.clear();
     myGameArea.frameNo += 1
     player.update();
+}
+
+function startGame() {
+    myGameArea.start();
 }
