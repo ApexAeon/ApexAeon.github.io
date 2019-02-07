@@ -34,22 +34,23 @@ var player = {
   update : function() {
     
     // WASD
-    if (myGameArea.keys && myGameArea.keys[87]) {this.xVel += 2 * acceleration}
-    if (myGameArea.keys && myGameArea.keys[65]) {this.zVel += 2 * acceleration}
-    if (myGameArea.keys && myGameArea.keys[83]) {this.xVel -= 2 * acceleration}
-    if (myGameArea.keys && myGameArea.keys[68]) {this.zVel -= 2 * acceleration}
+    if (myGameArea.keys && myGameArea.keys[87]) {this.xVel += 2 * acceleration};
+    if (myGameArea.keys && myGameArea.keys[65]) {this.zVel += 2 * acceleration};
+    if (myGameArea.keys && myGameArea.keys[83]) {this.xVel -= 2 * acceleration};
+    if (myGameArea.keys && myGameArea.keys[68]) {this.zVel -= 2 * acceleration};
     
-    if (this.xVel < 0) {this.xVel += acceleration}
-    if (this.zVel < 0) {this.zVel += acceleration}
-    if (this.xVel > 0) {this.xVel -= acceleration}
-    if (this.zVel > 0) {this.zVel -= acceleration}
+    if (this.xVel < 0) {this.xVel += acceleration};
+    if (this.zVel < 0) {this.zVel += acceleration};
+    if (this.xVel > 0) {this.xVel -= acceleration};
+    if (this.zVel > 0) {this.zVel -= acceleration};
         
-    this.x += this.xVel
-    this.y += this.yVel
-    this.z += this.zVel
+    this.x += this.xVel;
+    this.y += this.yVel;
+    this.z += this.zVel;
     
-    this.playerSprite.x = this.x //TODO create a sprite function for this, allow it to render in different modes
-    this.playerSprite.y = this.y
+    this.playerSprite.x = this.x; //TODO create a sprite function for this, allow it to render in different modes
+    this.playerSprite.y = this.y;
+    this.playerSprite.update()
   }
 }
 
