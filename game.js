@@ -26,13 +26,13 @@ var player = {
   x : 60,
   y : 0,
   z : 60,
-  xVel : 0,
+  xVel : 1,
   yVel : 0,
   zVel : 0,
   gravityAcceleration : 0,
   playerSprite : new sprite(30, 30, "red", 0, 0),
   update : function() {
-  
+    /*
     if (myGameArea.keys && myGameArea.keys[87]) {this.xVel += 2 * acceleration};
     if (myGameArea.keys && myGameArea.keys[65]) {this.zVel += 2 * acceleration};
     if (myGameArea.keys && myGameArea.keys[83]) {this.xVel -= 2 * acceleration};
@@ -42,7 +42,8 @@ var player = {
     if (this.zVel < 0) {this.zVel += acceleration};
     if (this.xVel > 0) {this.xVel -= acceleration};
     if (this.zVel > 0) {this.zVel -= acceleration};
-        
+    */
+      
     this.x += this.xVel;
     this.y += this.yVel;
     this.z += this.zVel;
