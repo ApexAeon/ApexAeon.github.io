@@ -33,10 +33,10 @@ var player = {
   playerSprite : new sprite(30, 30, "red", 0, 0),
   update : function() {
    
-    if (myGameArea.keys && myGameArea.keys[87]) {this.xVel += acceleration};
-    if (myGameArea.keys && myGameArea.keys[65]) {this.zVel += acceleration};
-    if (myGameArea.keys && myGameArea.keys[83]) {this.xVel -= acceleration};
-    if (myGameArea.keys && myGameArea.keys[68]) {this.zVel -= acceleration};
+    if (myGameArea.keys && myGameArea.keys[87]) {this.xVel += 2 * acceleration};
+    if (myGameArea.keys && myGameArea.keys[65]) {this.zVel += 2 * acceleration};
+    if (myGameArea.keys && myGameArea.keys[83]) {this.xVel -= 2 * acceleration};
+    if (myGameArea.keys && myGameArea.keys[68]) {this.zVel -= 2 * acceleration};
       
     if (xVel < 0) {xVel += 1}; 
     if (xVel > 0) {xVel -= 1}; 
