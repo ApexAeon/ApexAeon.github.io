@@ -26,23 +26,22 @@ var player = {
   x : 60,
   y : 0,
   z : 60,
-  xVel : 1,
+  xVel : 0,
   yVel : 0,
   zVel : 0,
   gravityAcceleration : 0,
   playerSprite : new sprite(30, 30, "red", 0, 0),
   update : function() {
-    /*
-    if (myGameArea.keys && myGameArea.keys[87]) {this.xVel += 2 * acceleration};
-    if (myGameArea.keys && myGameArea.keys[65]) {this.zVel += 2 * acceleration};
-    if (myGameArea.keys && myGameArea.keys[83]) {this.xVel -= 2 * acceleration};
-    if (myGameArea.keys && myGameArea.keys[68]) {this.zVel -= 2 * acceleration};
-    
-    if (this.xVel < 0) {this.xVel += acceleration};
-    if (this.zVel < 0) {this.zVel += acceleration};
-    if (this.xVel > 0) {this.xVel -= acceleration};
-    if (this.zVel > 0) {this.zVel -= acceleration};
-    */
+   
+    if (myGameArea.keys && myGameArea.keys[87]) {this.xVel += acceleration};
+    if (myGameArea.keys && myGameArea.keys[65]) {this.zVel += acceleration};
+    if (myGameArea.keys && myGameArea.keys[83]) {this.xVel -= acceleration};
+    if (myGameArea.keys && myGameArea.keys[68]) {this.zVel -= acceleration};
+      
+    if (xVel < 0) {xVel += 1}; 
+    if (xVel > 0) {xVel -= 1}; 
+    if (zVel < 0) {zVel += 1}; 
+    if (zVel > 0) {zVel -= 1};   
       
     this.x += this.xVel;
     this.y += this.yVel;
